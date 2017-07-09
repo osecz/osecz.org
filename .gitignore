@@ -1,0 +1,4 @@
+*.sw?
+_cache/
+_site/
+_live/

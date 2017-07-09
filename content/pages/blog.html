@@ -1,0 +1,5 @@
+{{ post_title="All Posts" }} 
+<h1>{{ printf "%s" "$post_title" }}</h1>
+<div class="posts">
+    {{ get_index_html content/blog all year }}
+</div>

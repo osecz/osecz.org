@@ -1,0 +1,12 @@
+{{ template template/base.html }}
+    <div class="post">
+        <h1><a href="/blog/{{ out "$post_id" }}/">{{ out "$post_title" }}</a></h1>
+        <div class="content">
+            {{ content }}
+        </div>
+        <hr>
+        <div class="date">
+            <strong>{{ out "$post_title" }}</strong> was
+            published on {{ out "$post_date" }}.
+        </div>
+    </div>
