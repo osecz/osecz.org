@@ -1,13 +1,35 @@
+# Nginx configuration for live environment.
+
+# https://osecz.org/
 server {
-	listen 80;
-	listen [::]:80;
+    listen 443 ssl;
+    listen [::]:443 ssl;
 
-	server_name osecz.org osecz;
+    server_name osecz.org;
 
-	root /var/www/osecz.org;
-	index index.html;
+    ssl_certificate /etc/letsencrypt/live/osecz.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/osecz.org/privkey.pem;
 
-	location / {
-		try_files $uri $uri/ =404;
-	}
+    root /var/www/osecz.org;
+}
+
+# https://www.osecz.org/ => https://osecz.org/
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    server_name www.osecz.org;
+
+    ssl_certificate /etc/letsencrypt/live/osecz.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/osecz.org/privkey.pem;
+
+    return 301 https://osecz.org$request_uri;
+}
+
+# http://osecz.org/, http://www.osecz.org/ => https://osecz.org/
+server {
+    listen 80;
+    listen [::]:80;
+    server_name osecz.org www.osecz.org;
+    return 301 https://osecz.org$request_uri;
 }
