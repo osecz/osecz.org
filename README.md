@@ -15,7 +15,7 @@ website on any other system, some of the steps below may have to be
 modified.
 
 [WEBSITE]: https://osecz.org/
-[CHANNEL]: http://webchat.freenode.net/?channels=osecz
+[CHANNEL]: https://webchat.freenode.net/?channels=osecz
 
 
 Contents
@@ -86,7 +86,7 @@ facing server.
 
  3. Get TLS certificates.
 
-       sudo certbot certonly --webroot -w /var/www/osecz.org osecz.org@gmail.com -d osecz.org,www.osecz.org --agree-tos -m 
+        sudo certbot certonly --webroot -w /var/www/osecz.org osecz.org@gmail.com -d osecz.org,www.osecz.org --agree-tos -m
 
  4. Configure Nginx for the live website.
 
@@ -104,7 +104,7 @@ Here is a list of useful links about this project.
 
 - [Source code](https://github.com/osecz/osecz.org)
 - [Issue tracker](https://github.com/osecz/osecz.org/issues)
-- [Freenode IRC: #osecz](http://webchat.freenode.net/?channels=osecz)
+- [Freenode IRC: #osecz](https://webchat.freenode.net/?channels=osecz)
 
 
 License
