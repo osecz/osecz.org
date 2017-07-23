@@ -103,12 +103,12 @@ footer .links a {
 
 
 /* Posts */
-.posts h2 a:link, .posts h2 a:visited, 
+.posts h3 a:link, .posts h3 a:visited,
 .post h1 a:link, .post h1 a:visited {
     color: #333333;
 }
 
-.posts h2 a:hover, .posts h2 a:active, 
+.posts h3 a:hover, .posts h3 a:active,
 .post h1 a:hover, .post h1 a:active {
     color: #555555; 
     text-decoration: none;
