@@ -86,7 +86,7 @@ facing server.
 
  3. Get TLS certificates.
 
-        sudo certbot certonly --webroot -w /var/www/osecz.org osecz.org@gmail.com -d osecz.org,www.osecz.org --agree-tos -m
+        sudo certbot certonly --agree-tos -m osecz.org@gmail.com --webroot -w /var/www/osecz.org -d osecz.org,www.osecz.org
 
  4. Configure Nginx for the live website.
 
@@ -96,6 +96,16 @@ facing server.
 
  5. Visit https://osecz.org/ with a web browser to see a local copy of
     the website.
+
+ 6. Edit crontab to attempt renewal of the certificate everyday to
+    ensure that the certificate is renewed before it expires.
+
+        crontab -e
+
+    In the editor, add the following entry, then save and quit the
+    editor.
+
+        0 0 * * * /usr/bin/certbot renew -n --renew-hook "systemctl reload nginx" >> /var/log/certbot-renew.log
 
 
 Resources
