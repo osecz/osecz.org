@@ -1,0 +1,15 @@
+# http://example.com/
+server {
+    listen 80;
+    listen [::]:80;
+    server_name osecz.org osecz;
+    root /var/www/osecz.org;
+}
+
+# http://www.example.com/ => http://example.com/
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.osecz.org;
+    return 301 http://osecz.org$request_uri;
+}

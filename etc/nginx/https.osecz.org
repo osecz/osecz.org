@@ -1,11 +1,9 @@
-# Nginx configuration for live environment.
-
-# https://osecz.org/
+# https://example.com/
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
 
-    server_name osecz.org;
+    server_name osecz.org osecz;
 
     ssl_certificate /etc/letsencrypt/live/osecz.org/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/osecz.org/privkey.pem;
@@ -13,7 +11,7 @@ server {
     root /var/www/osecz.org;
 }
 
-# https://www.osecz.org/ => https://osecz.org/
+# https://www.example.com/ => https://example.com/
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -26,7 +24,7 @@ server {
     return 301 https://osecz.org$request_uri;
 }
 
-# http://osecz.org/, http://www.osecz.org/ => https://osecz.org/
+# http://example.com/, http://www.example.com/ => https://example.com/
 server {
     listen 80;
     listen [::]:80;
