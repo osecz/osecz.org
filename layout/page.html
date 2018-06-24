@@ -1,35 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>{{ title }}</title>
-    <meta charset=utf-8>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" type="text/css" href="/css/base.css">
 </head>
 
 <body>
 
 <nav>
 <div>
+    <a href="/"><img src="/img/osecz-bright.png" alt="OSECZ Logo"></a>
     <a href="/">Home</a>
     <a href="/irc/">IRC</a>
     <a href="/blog/">Blog</a>
 </div>
 </nav>
 
-<header>
-<a href="/">
-<span>OSECZ</span>
-<img src="/img/osecz-site-logo.svg">
-</a>
-</header>
-
 <main>
 {{ content }}
 </main>
 
 <footer>
+<div>
 <div>
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -39,29 +34,43 @@
       js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="fb-page" data-href="https://www.facebook.com/osecz" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/osecz" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/osecz">OSECZ</a></blockquote></div>
+    <div class="fb-page"
+         data-href="https://www.facebook.com/osecz"
+         data-small-header="true"
+         data-adapt-container-width="true"
+         data-hide-cover="false"
+         data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/osecz"
+                    class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/osecz">OSECZ</a>
+        </blockquote>
+    </div>
 </div>
 <div>
-    <a href="https://twitter.com/osecz" class="twitter-follow-button" data-show-count="true">Follow @osecz</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a href="https://twitter.com/osecz"
+       class="twitter-follow-button"
+       data-show-count="true">Follow @osecz</a>
+    <script async src="//platform.twitter.com/widgets.js"></script>
 </div>
 <div>
-    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-    <script type="IN/FollowCompany" data-id="18146188" data-counter="right"></script>
+    <script src="//platform.linkedin.com/in.js"></script>
+    <script type="IN/FollowCompany" data-id="18146188" data-counter="right">
+    </script>
 </div>
 <div>
 <p>
-    &copy; 2017 OSECZ
+    &copy; 2017-2018 OSECZ
 </p>
 <p>
     This is free and open source website.
-    The source code of this website is available at
-    <a href="https://github.com/osecz/osecz.org">https://github.com/osecz/osecz.org</a>.
+    The source code of this website is available on
+    <a href="https://github.com/osecz/osecz.org">GitHub</a>.
     You are welcome to modify and improve this website under the terms
     of the <a href="/license/">MIT License</a>.
 </p>
 <p>
-    To report bugs, suggest improvements, or ask questions, please visit
-    <a href="https://github.com/osecz/osecz.org/issues">https://github.com/osecz/osecz.org/issues</a>.
+    To report bugs, suggest improvements, or ask questions,
+    <a href="https://github.com/osecz/osecz.org/issues">create issues</a>.
 </p>
 </div>
 <div class="links">
@@ -70,6 +79,7 @@
     <a href="https://twitter.com/osecz">Twitter</a>
     <a href="https://www.linkedin.com/company/osecz/">LinkedIn</a>
     <a href="https://www.facebook.com/osecz/">Facebook</a>
+</div>
 </div>
 </footer>
 </html>

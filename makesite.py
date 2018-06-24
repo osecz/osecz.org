@@ -69,6 +69,11 @@ def read_headers(text):
             break
         yield match.group(1), match.group(2), match.end()
 
+def rfc_2822_format(date_str):
+    """Convert yyyy-mm-dd date string to RFC 2822 format date string."""
+    d = datetime.datetime.strptime(date_str, '%Y-%m-%d')
+    return d.strftime('%a, %d %b %Y %H:%M:%S +0000')
+
 
 def read_content(filename):
     """Read content and metadata from file into a dictionary."""
@@ -105,6 +110,7 @@ def read_content(filename):
     content.update({
         'content': text,
         'summary': truncate(text),
+        'rfc_2822_date': rfc_2822_format(content['date'])
     })
 
     return content

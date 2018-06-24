@@ -1,4 +1,10 @@
-<h3><a href="{{ base_path }}/{{ blog }}/{{ slug }}/">{{ title }}</a></h3>
-<p>
-{{ summary }}&nbsp;<a href="{{ base_path }}/{{ blog }}/{{ slug }}/">...</a>
+<article>
+<h2><a href="{{ base_path }}/{{ blog }}/{{ slug }}/">{{ title }}</a></h2>
+<p class="meta">Published on {{ date }} by <b>{{ author }}</b></p>
+<p class="summary">
+{{ summary }}&nbsp;<a class="more" href="{{ base_path }}/{{ blog }}/{{ slug }}/">...</a>
 </p>
+<div>
+<a class="more" href="{{ base_path }}/{{ blog }}/{{ slug }}/">Read More</a>
+</div>
+</article>
