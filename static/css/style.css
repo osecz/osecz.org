@@ -111,14 +111,13 @@ article h1 a:hover, article h1 a:active,
     color: #707070;
 }
 
-p.meta {
-    margin-top: 0;
+.meta {
     font-size: 0.8em;
     color: #707070;
     font-style: italic;
 }
 
-p.summary {
+.summary {
     margin-top: 0.25em;
     margin-bottom: 0.25em;
 }
