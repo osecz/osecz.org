@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+# Copyright (c) 2017-2018 OSECZ
+# Licensed under the terms of the MIT License.
+
+# This software is a derivative of the original makesite.py.
+# The license text of the original makesite.py is included below.
+
 # The MIT License (MIT)
 #
 # Copyright (c) 2018 Sunaina Pai
