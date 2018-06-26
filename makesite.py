@@ -69,6 +69,7 @@ def read_headers(text):
             break
         yield match.group(1), match.group(2), match.end()
 
+
 def rfc_2822_format(date_str):
     """Convert yyyy-mm-dd date string to RFC 2822 format date string."""
     d = datetime.datetime.strptime(date_str, '%Y-%m-%d')
@@ -169,7 +170,7 @@ def main():
         'base_path': '',
         'subtitle': 'OSECZ',
         'author': 'Admin',
-        'site_url': 'http://localhost:8000',
+        'site_url': 'https://osecz.org',
         'current_year': datetime.datetime.now().year
     }
 
