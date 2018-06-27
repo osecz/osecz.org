@@ -8,7 +8,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
-    line-height: 1.5em;
     margin-top: 1em;
 }
 
@@ -36,7 +35,6 @@ nav {
     background: #303030;
     border-bottom: thin solid #101010;
     text-transform: uppercase;
-    padding: 0 0.5em;
 }
 
 nav a {
@@ -46,6 +44,10 @@ nav a {
        Otherwise, the entire anchor would be center-aligned which would
        cause the logo to shift towards the top. */
     line-height: 0;
+}
+
+nav a:last-child {
+    margin-right: 0;
 }
 
 nav a:link, nav a:visited {
