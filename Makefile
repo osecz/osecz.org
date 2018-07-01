@@ -6,8 +6,8 @@ help:
 	@echo 'Usage: make [target]'
 	@echo
 	@echo 'High-level targets:'
-	@echo '  https   Reinstall live website and serve with Nginx via HTTP.'
-	@echo '  http    Reinstall live website and serve with Nginx via HTTPS.'
+	@echo '  https   Reinstall live website and serve with Nginx via HTTPS.'
+	@echo '  http    Reinstall live website and serve with Nginx via HTTP.'
 	@echo '  update  Pull latest Git commits and update live website.'
 	@echo '  rm      Uninstall live website.'
 	@echo '  local   Generate local website and serve with Python.'
@@ -22,28 +22,27 @@ help:
 
 https: http
 	@echo Setting up HTTPS website ...
-	certbot certonly -n --agree-tos -m $(MAIL) --webroot \
-	                 -w /var/www/$(FQDN) -d $(FQDN),www.$(FQDN)
+	certbot certonly -n --agree-tos -m '$(MAIL)' --webroot \
+	                 -w '/var/www/$(FQDN)' -d '$(FQDN),www.$(FQDN)'
 	(crontab -l | sed '/certbot/d'; cat etc/crontab) | crontab
-	ln -snf "$$PWD/etc/nginx/https.$(FQDN)" /etc/nginx/sites-enabled/$(FQDN)
+	ln -snf "$$PWD/etc/nginx/https.$(FQDN)" '/etc/nginx/sites-enabled/$(FQDN)'
 	systemctl reload nginx
 	@echo Done; echo
 
 http: rm live
 	@echo Setting up HTTP website ...
-	rm -f /etc/nginx/sites-enabled/$(FQDN)
-	ln -snf "$$PWD/_live" /var/www/$(FQDN)
-	ln -snf "$$PWD/etc/nginx/http.$(FQDN)" /etc/nginx/sites-enabled/$(FQDN)
+	ln -snf "$$PWD/_live" '/var/www/$(FQDN)'
+	ln -snf "$$PWD/etc/nginx/http.$(FQDN)" '/etc/nginx/sites-enabled/$(FQDN)'
 	systemctl reload nginx
-	echo 127.0.0.1 $(NAME) >> /etc/hosts
+	echo 127.0.0.1 '$(NAME)' >> /etc/hosts
 	@echo Done; echo
 
 update: pull live
 
 rm: checkroot
 	@echo Removing website ...
-	rm -f /etc/nginx/sites-enabled/$(FQDN)
-	rm -f /var/www/$(FQDN)
+	rm -f '/etc/nginx/sites-enabled/$(FQDN)'
+	rm -f '/var/www/$(FQDN)'
 	systemctl reload nginx
 	sed -i '/$(NAME)/d' /etc/hosts
 	#
