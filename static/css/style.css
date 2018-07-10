@@ -21,6 +21,11 @@ a:hover, a:active {
     text-decoration: underline
 }
 
+pre {
+    background: #f0f0f0;
+    padding: 0.5em;
+}
+
 /* Single column layout */
 nav div, main, footer > div {
     max-width: 40em;
@@ -90,6 +95,8 @@ footer .links a {
     margin-right: 1em;
 }
 
+/* Add some vertical space between Facebook and Twitter plugins,
+ * otherwise they stick next to each other. */
 .fb-page {
     margin-bottom: 0.5em;
 }
